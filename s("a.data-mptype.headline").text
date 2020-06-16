@@ -1,0 +1,29 @@
+=> [1;34m#(Element:0x3ffff7750468 {[0m
+  name = [31m[1;31m"[0m[31mdiv[1;31m"[0m[31m[0m,
+  attributes = [ [1;34m#(Attr:0x3ffff7a2c060 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mheadlineStack[1;31m"[0m[31m[0m })],
+  children = [
+    [1;34m#(Element:0x3ffff7ab71c4 {[0m
+      name = [31m[1;31m"[0m[31msection[1;31m"[0m[31m[0m,
+      attributes = [ [1;34m#(Attr:0x3ffff7ab6bac {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mheadlineStack__listContainer[1;31m"[0m[31m[0m })],
+      children = [
+        [1;34m#(Element:0x3ffff7abaf54 {[0m
+          name = [31m[1;31m"[0m[31mul[1;31m"[0m[31m[0m,
+          attributes = [ [1;34m#(Attr:0x3ffff7aba93c {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mheadlineStack__list[1;31m"[0m[31m[0m })],
+          children = [
+            [1;34m#(Element:0x3ffff7a46adc {[0m
+              name = [31m[1;31m"[0m[31mli[1;31m"[0m[31m[0m,
+              attributes = [ [1;34m#(Attr:0x3ffff7a464c4 {[0m name = [31m[1;31m"[0m[31mdata-story-id[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m29302203[1;31m"[0m[31m[0m }), [1;34m#(Attr:0x3ffff7a464b0 {[0m name = [31m[1;31m"[0m[31mdata-id[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m29314367[1;31m"[0m[31m[0m })],
+              children = [
+                [1;34m#(Element:0x3ffff7a4c93c {[0m
+                  name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+                  attributes = [
+                    [1;34m#(Attr:0x3ffff7a6ee10 {[0m name = [31m[1;31m"[0m[31mname[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m&lpos=fp:feed:xx:story:1:related[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x3ffff7a6edfc {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m/mlb/story/_/id/29302203/how-astros-luhnow-mindset-ruining-mlb[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x3ffff7a6ede8 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x3ffff7a6edd4 {[0m name = [31m[1;31m"[0m[31mdata-mptype[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mheadline[1;31m"[0m[31m[0m })],
+                  children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mOlney: How shortsighted greed is tearing baseball apart[1;31m"[0m[31m[0m)]
+                  })]
+              })]
+          })]
+      })]
+  })

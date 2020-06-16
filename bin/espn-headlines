@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require './lib/espn_headlines'
+require 'bundler/setup'
+EspnHeadlines::CLI.new.call #creates new instance of controller and executes the call method
+
+#this is the file people are running
