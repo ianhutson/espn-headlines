@@ -1,5 +1,5 @@
 class EspnHeadlines::Headline
-attr_accessor :name, :url, :article
+attr_accessor :name, :url, :article, :author, :time
     def self.now
        self.scrape
     end
@@ -19,10 +19,18 @@ attr_accessor :name, :url, :article
                 ""
             end
             hl.article = arr
+            author_arr = []
+            author_info = article.css("div.author.has-bio")
+            author_title = author_info.css("span").text
+            if author_info.text != ""
+                hl.author = author_info.text.gsub(author_title, " - #{author_title}")
+            else 
+                hl.author = article.css("div.author").text
+            end
+            hl.time = article.css("span.timestamp span.time").text
             headlines << hl
         end
         headlines
     end
-
 end
 

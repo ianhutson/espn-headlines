@@ -6,40 +6,47 @@ class EspnHeadlines::CLI
     end
 
     def headlines
-        puts "Current espn.com headlines:"
+        puts "Welcome!"
+        art
+        puts "Now loading..."
         @headlines = EspnHeadlines::Headline.now.last(7)
+        puts "Current ESPN.com headlines:"
         @headlines.each.with_index(1) do |headline, i|
             puts "#{i}. " + (i == 7 ? "[ESPN+] " : "") + "#{headline.name}" 
         end
+        puts "Enter number corresponding with article you'd like to read. Enter 'refresh' to relist articles. Enter 'exit' to exit."
     end
 
     def menu
         input = nil
         while input != "exit"
-        puts "Enter number corresponding with article you'd like to read. Enter 'headlines' to relist articles. Enter 'exit' to exit."
         input = gets.strip.downcase
-        if input.to_i > 0
+        if input.to_i > 0 && input.to_i < 8
         the_headline = @headlines[input.to_i-1]
-        puts "-------------------------------------------------------"
+        divide
             if input.to_i > 0 && input.to_i < 7
                 puts "#{the_headline.name}" 
             elsif input.to_i == 7 
                 puts ((input.to_i-1) == 6 ? "[ESPN+] " : "") + "#{the_headline.name}"
             end
         puts the_headline.url
-        puts "-------------------------------------------------------"
-        puts ""
+        page_break
+        puts the_headline.author
+        puts the_headline.time
+        divide
+        page_break
         the_headline.article.each do |p|
-        puts p   
-        puts ""
-        end
-        puts "-------------------------------------------------------"
-        elsif input == "headlines"
+            puts p   
+            page_break
+            end
+        divide
+        puts "Enter number corresponding with article you'd like to read. Enter 'refresh' to relist articles. Enter 'exit' to exit."
+        elsif input == "refresh"
             headlines
         elsif input == "exit"
             cya
         else
-            puts "Error. Please type 'headlines' or 'exit'"
+            puts "Error: not a valid entry. Enter number (1 - 7) corresponding with article you'd like to read. Enter 'refresh' to relist articles. Enter 'exit' to exit."
         end
         end
     end
@@ -48,5 +55,19 @@ class EspnHeadlines::CLI
         puts "Goodbye."
         exit
     end
+    
+    def page_break
+        puts ""
+    end
 
+    def divide
+        puts "--------------------------------------------------------------------------------------------------------------"
+    end
+
+    def art
+        text = File.open("art.txt").read 
+        text.each_line do |line|
+          puts line
+        end
+    end
 end
