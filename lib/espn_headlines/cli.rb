@@ -1,11 +1,11 @@
 class EspnHeadlines::CLI
     def call
-        headlines
+        home
         menu
         cya
     end
 
-    def headlines
+    def home
         puts "Welcome!"
         art
         puts "Now loading..."
@@ -42,7 +42,7 @@ class EspnHeadlines::CLI
         divide
         puts "Enter number corresponding with article you'd like to read. Enter 'refresh' to relist articles. Enter 'exit' to exit."
         elsif input == "refresh"
-            headlines
+            home
         elsif input == "exit"
             cya
         else

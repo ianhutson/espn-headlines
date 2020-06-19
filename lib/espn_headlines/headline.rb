@@ -1,16 +1,12 @@
 class EspnHeadlines::Headline
 attr_accessor :name, :url, :article, :author, :time
     def self.now
-       self.scrape
-    end
-
-    def self.scrape 
         doc = Nokogiri::HTML(open("https://espn.com"))
         headlines = []
-        doc.css("ul.headlineStack__list li a").each do |headline|
+        doc.css("section.col-three ul.headlineStack__list li a").each do |headline|
             hl = self.new
             hl.name = headline.text
-            hl.url = "https://espn.com" + headline.attr("href")
+            hl.url = "https://espn.com" + "#{headline.attr("href")}"
             html = (Nokogiri::HTML(open(hl.url)))
             article = html.css("div.article-body")
             arr =[]
@@ -24,6 +20,9 @@ attr_accessor :name, :url, :article, :author, :time
             author_title = author_info.css("span").text
             if author_info.text != ""
                 hl.author = author_info.text.gsub(author_title, " - #{author_title}")
+            elsif article.css("div.author span").text != article.css("div.author").text
+                position = article.css("div.author span").text
+                hl.author = article.css("div.author").text.gsub(position, " - #{position}")
             else 
                 hl.author = article.css("div.author").text
             end
