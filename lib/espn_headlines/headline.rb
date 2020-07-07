@@ -2,17 +2,15 @@ class EspnHeadlines::Headline
 attr_accessor :name, :url, :article, :author, :time
 @@all = []
 
-    def initialize(hash)
-        hash.each do |key, value|
-            self.send("#{key}=", value)
-        end
-        @@all.push(self)
+    def initialize
+        @name = name
+        @url = url
+        @article = article
+        @author = author
+        @time = time
     end
-
-    def self.create(headlines)
-        headlines.each do |headlines_hash|
-            EspnHeadlines::Headline.new(headlines_hash)
-        end
+    def save
+        @@all << self
     end
     def self.all
         @@all

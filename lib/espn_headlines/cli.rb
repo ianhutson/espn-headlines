@@ -7,7 +7,6 @@ class EspnHeadlines::CLI
     end
     def create_articles
         headlines = EspnHeadlines::Scraper.now
-        EspnHeadlines::Headline.create(headlines)
     end
     def home
         puts "Welcome!"
