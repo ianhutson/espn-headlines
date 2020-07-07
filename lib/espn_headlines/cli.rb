@@ -1,15 +1,19 @@
 class EspnHeadlines::CLI
     def call
+        create_articles
         home
         menu
         cya
     end
-
+    def create_articles
+        headlines = EspnHeadlines::Scraper.now
+        EspnHeadlines::Headline.create(headlines)
+    end
     def home
         puts "Welcome!"
         art
         puts "Now loading..."
-        @headlines = EspnHeadlines::Headline.now.last(7)
+        @headlines = EspnHeadlines::Headline.all
         puts "Current ESPN.com headlines:"
         @headlines.each.with_index(1) do |headline, i|
             puts "#{i}. " + (i == 7 ? "[ESPN+] " : "") + "#{headline.name}" 
