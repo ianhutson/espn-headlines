@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Ian Hutson"]
   spec.email         = ["ih00209@georgiasouthern.edu"]
 
-  spec.summary       = %q{A CLI application that scrapes espn.com and allows a user to read the current headlines.}
+  spec.summary       = %q{A CLI application that allows a user to view espn.com headlines and read their respective articles.}
   spec.description   = %q{A required project for Flatiron School module 1.}
   spec.homepage      = "https://github.com/ianhutson/espn-headlines/"
   spec.license       = "MIT"

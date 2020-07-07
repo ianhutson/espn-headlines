@@ -1,5 +1,5 @@
 # EspnHeadlines
-This ruby gem provides a CLI application that allows a user to review espn.com headlines and read their respective articles. 
+This ruby gem provides a CLI application that allows a user to view espn.com headlines and read their respective articles. 
 
 ## Installation
 
